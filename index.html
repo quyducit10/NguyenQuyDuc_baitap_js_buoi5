@@ -11,83 +11,81 @@
 
   </head>
   <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-header">
-                            Quản Lý Tuyển Sinh
-                        </div>
-                        <div class="card-body">
-                            <div class="mb-3">
-                              <label for="" class="form-label"></label>
-                              <input type="number" name="" id="diemchuan" class="form-control" placeholder="Diem Chuan">
-                            </div>
-                            <div class="mb-3">
-                                <select name="" id="khuvuc">
-                                    <option value="">Chon Khu Vuc</option>
-                                    <option value="a">A</option>
-                                    <option value="b">B</option>
-                                    <option value="c">C</option>
-                                </select>
-                                <select name="" id="doituong">
-                                    <option value="">Chon Doi Tuong</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                              </div>
-                              <div class="mb-3">
-                                <label for="" class="form-label"></label>
-                                <input type="number" name="" id="diem1" class="form-control" placeholder="Diem mon thu nhat">
-                                <label for="" class="form-label"></label>
-                                <input type="number" name="" id="diem2" class="form-control" placeholder="Diem mon thu hai">
-                                <label for="" class="form-label"></label>
-                                <input type="number" name="" id="diem3" class="form-control" placeholder="Diem mon thu ba">
-                              </div>
-                              <button class="btn btn-success" onclick="result()">Ket Qua</button>
-                        </div>
-                        <div id="ketqua" style="display:block ;" >
-                            <span>Ket Qua :</span>
-                            <span id="xuat"></span>
-                        </div>
-                    </div>
+       
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    Tinh Thue Thu Nhap Ca Nhan
                 </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                      <label for="" class="form-label"></label>
+                      <input type="text" name="" id="inName" class="form-control" placeholder="Nhap Ho Ten">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label"></label>
+                        <input type="number" name="" id="thunhap" class="form-control" placeholder="Tong Thu Nhap Nam">
+                      </div>
+                      <div class="mb-3">
+                        <label for="" class="form-label"></label>
+                        <input type="number" name="" id="soNguoi" class="form-control" placeholder="So nguoi phu thuoc">
+                      </div>
+                      <button class="btn btn-success" onclick="tinhTienthue()">Tinh Tien Thue</button>
+                </div>
+                    <div id="ketquatienthue">
+                        <span>Họ Tên :</span>
+                        <span id="outName"></span>
+                        <span>Tiền thuế thu nhập cá nhân :</span>
+                        <span id="outMoney"></span>
+                    </div>
             </div>
         </div>
+    </div>
+</div>
 <br>
 <br>
-
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header">
-                        Tinh Tien Dien
+                        Tinh Tien Cap
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
+                           <select name="" id="loaikh" onchange="hiensoKn()">
+                               <option value="0">Chọn loại khách hàng</option>
+                               <option value="1">Nhà Dân</option>
+                               <option value="2">Doanh Nghiệp</option>
+                           </select>
+                          </div>
+                        <div class="mb-3">
                           <label for="" class="form-label"></label>
-                          <input type="text" name="" id="name" class="form-control" placeholder="Họ Tên">
+                          <input type="text" name="" id="makh" class="form-control" placeholder="Nhập mã khách hàng">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label"></label>
-                            <input type="number" name="" id="kw" class="form-control" placeholder="Số kW">
+                            <input type="number" name="" id="sokenh" class="form-control" placeholder="Số kênh cao cấp">
                           </div>
-                          <button class="btn btn-success" onclick="tienDien()">Tinh Tien Dien</button>
+                          <div class="mb-3" style="display:none;" id="hienso">
+                            <label for="" class="form-label"></label>
+                            <input type="text" name="" id="sokn" class="form-control" placeholder="Số kết nối">
+                          </div>
+                          <button class="btn btn-success" onclick="tinhtiencap()">Tính tiền cáp</button>
                     </div>
-                    <div id="result">
-                        <span>Ho Ten: </span>
-                        <span id="inHoten"></span>
-                        <span>Tien dien: </span>
-                        <span id="inTien"></span>
+                    <div id="hienketqua">
+                        <span>Mã Khách hàng :</span>
+                        <span id="inmakh"></span>
+                        <span>Tiền cáp :</span>
+                        <span id="intiencap"></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<br>
-<br>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
